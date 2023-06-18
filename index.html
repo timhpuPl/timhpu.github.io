@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <style>
+    .hide-on-mobile {
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .hide-on-mobile {
+        display: initial;
+      }
+    }
+    body {
+      background-color: #191919; /* Twój wybrany kolor tła */
+    }
+    .disabled {
+        pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+    
+    <section>
+    <nav class="bg-stone-950">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <a href="#" class="flex items-center">
+                <img class="h-14 w-14" src="img/logo.png" alt="Logo">
+                <span class="ml-2 text-white text-lg font-bold hide-on-mobile">Wyjechani.pl</span>
+              </a>
+            </div>
+      
+            <!-- Mobile Menu -->
+            <div class="flex items-center sm:hidden">
+              <button class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none" onclick="toggleMobileMenu()">
+                <svg class="h-6 w-6 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" id="mobileMenuIcon">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+      
+            <!-- Desktop Menu -->
+            <div class="hidden sm:flex items-center">
+              <!-- Oferta z dropdown -->
+              <div class="relative">
+                <button class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none" onclick="toggleDropdown()">
+                  Oferta
+                  <svg class="h-4 w-4 inline-block ml-1 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" id="dropdownIcon">
+                    <path fill-rule="evenodd" d="M10 12l-6-6h12l-6 6z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <div class="absolute z-10 hidden bg-white rounded-md mt-2 shadow-lg" id="dropdownMenu">
+                  <ul class="py-1">
+                    <li><a href="#" class="block px-10 py-2 text-black ">Szewilla</a></li>
+                    <li><a href="#" class="block px-10 py-2 text-black ">Krasne Domki</a></li>
+                    <li><a href="#" class="block px-10 py-2 text-black ">Loft Rooms</a></li>
+                  </ul>
+                </div>
+              </div>
+      
+              <!-- O nas -->
+              <a href="#" class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Galeria</a>
+      
+              <!-- Kontakt -->
+              <a href="#" class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Kontakt</a>
+      
+              <!-- Zarezerwuj -->
+              <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md text-sm font-medium">Zarezerwuj</a>
+            </div>
+          </div>
+      
+          <!-- Mobile Dropdown -->
+          <div class="hidden sm:hidden" id="mobileMenu">
+            <ul class="py-1">
+              <li>
+                <button class="block px-4 py-2 text-white focus:outline-none" onclick="toggleDropdownMobile()">
+                  <span class="flex items-center">
+                    <span class="mr-1">Oferta</span>
+                    <svg class="h-4 w-4 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" id="mobileDropdownIcon">
+                      <path fill-rule="evenodd" d="M10 12l-6-6h12l-6 6z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                </button>
+                <ul class="py-1 ml-4 hidden" id="mobileDropdownMenu">
+                  <li><a href="#" class="block px-4 py-2 text-white ">Szewilla</a></li>
+                  <li><a href="#" class="block px-4 py-2 text-white ">Krasne Domki</a></li>
+                  <li><a href="#" class="block px-4 py-2 text-white ">Loft Rooms</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="block px-4 py-2 text-white ">O nas</a></li>
+              <li><a href="#" class="block px-4 py-2 text-white ">Kontakt</a></li>
+              <li><a href="#" class="block px-4 py-2 text-white">Zarezerwuj</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <!-- Hero-->
+    <section class="overflow-hidden">
+    <div class="bg-gray-900">
+        <div class="relative">
+        <div class="h-800px w-screen overflow-hidden">
+            <video autoplay loop muted class="object-cover object-center h-full w-full">
+            <source src="img/trailer.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="absolute -bottom-0.5 left-0 right-0 flex items-center justify-center">
+            <img src="img/las.png" alt="Bottom Image" class="disabled w-full lg:md:h-1/2 md:h-1/2 sm:h-48">
+        </div>
+        </div>
+    </div>
+</section>
+    <!-- atrybuty-->
+    <section class="overflow-hidden mt-28 mb-28">
+      <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10">
+        <div class="w-72 h-40 sm:w-72 sm:h-40 mx-auto">
+          <div class="flex items-center justify-center">
+            <img src="img/value.png" alt="Obrazek" class="w-12 h-12">
+          </div>
+          <div class="flex items-center justify-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">WYSOKI STANDARD</p>
+          </div>
+          <div class="flex items-center justify-center text-center sm:text-malapc text-malatel">
+            <p class="text-white">APARTAMENTY PRZYGOTOWANE Z MYŚLĄ O NAJBARDZIEJ WYMAGAJĄCYCH KLIENTACH</p>
+          </div>
+        </div> <!--kolejne-->
+        <div class="w-96 h-40 sm:w-96 sm:h-40 mx-auto">
+          <div class="flex items-center justify-center">
+            <img src="img/restaurant.png" alt="Obrazek" class="w-12 h-12">
+          </div>
+          <div class="flex items-center justify-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">RESTAURACJE I KARCZMY</p>
+          </div>
+          <div class="flex items-center justify-center text-center sm:text-malapc text-malatel">
+            <p class="text-white">BOGATA OFERTA GASTRONOMICZNA W POBLIŻU OBIEKTÓW</p>
+          </div>
+        </div> <!--kolejne-->
+        <div class="w-72 h-40 sm:w-72 sm:h-40 mx-auto">
+          <div class="flex items-center justify-center">
+            <img src="img/parking.png" alt="Obrazek" class="w-12 h-12">
+          </div>
+          <div class="flex items-center justify-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">PARKING</p>
+          </div>
+          <div class="flex items-center justify-center text-center sm:text-malapc text-malatel">
+            <p class="text-white">BEZPŁATNY PARKING W KAŻDYM OBIEKCIE</p>
+          </div>
+        </div> <!--kolejne-->
+        <div class="w-72 h-40 sm:w-72 sm:h-40 mx-auto">
+          <div class="flex items-center justify-center">
+            <img src="img/wifi.png" alt="Obrazek" class="w-12 h-12">
+          </div>
+          <div class="flex items-center justify-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">DARMOWE WIFI</p>
+          </div>
+          <div class="flex items-center justify-center text-center sm:text-malapc text-malatel">
+            <p class="text-white">ZAPEWNIAMY SZYBKI INTERNET ŚWIATŁOWODOWY</p>
+          </div>
+        </div> <!--kolejne-->
+        <div class="w-72 h-40 sm:w-72 sm:h-40 mx-auto">
+          <div class="flex items-center justify-center">
+            <img src="img/bed.png" alt="Obrazek" class="w-12 h-12">
+          </div>
+          <div class="flex items-center justify-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">UDANY WYPOCZYNEK</p>
+          </div>
+          <div class="flex items-center justify-center text-center sm:text-malapc text-malatel">
+            <p class="text-white">GWARANTUJEMY ŻE KORZYSTAJĄC Z NASZEJ OFERTY WYPOCZNIESZ</p>
+          </div>
+        </div> <!--kolejne-->
+        <div class="w-72 h-40 sm:w-72 sm:h-40 mx-auto">
+          <div class="flex items-center justify-center">
+            <img src="img/view.png" alt="Obrazek" class="w-12 h-12">
+          </div>
+          <div class="flex items-center justify-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">PIĘKNE WIDOKI</p>
+          </div>
+          <div class="flex items-center justify-center text-center sm:text-malapc text-malatel">
+            <p class="text-white">NASZE OBIEKTY SĄ ULOKOWANE W NAJLEPSZYCH LOKALIZACJACH</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white text-black text-xl font-bold justify-center text-center pb-16">
+      <p class="pt-10">OCEŃ NAS!</p>
+      <div class="flex justify-center text-center mr-12">
+        <img src="img/TrustPilot.png" alt="" class="pt-5 w-10/12 h-10/12 sm:w-1/3 sm:h-1/3">
+      </div>
+    </section>
+    <section class="pb-28">
+      <div class="justify-center text-center pt-10">
+       <h1 class="text-white font-bold text-4xl pt-10 pb-10">Kontakt</h1>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div>
+          <div class="flex flex-col items-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">SZEWILLA</p>
+          </div>
+          <div class="text-center sm:text-malapc text-malatel text-white">
+            <p>+48 510 562 121</p>
+            <p>Szewnia Dolna 8</p>
+            <p>loft@vp.pl</p>
+          </div>
+        </div> <!--next-->
+        <div>
+          <div class="flex flex-col items-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">LOFT ROOMS</p>
+          </div>
+          <div class="text-center sm:text-malapc text-malatel text-white">
+            <p>+48 510 562 121</p>
+            <p>Zamość ul. Sikorskiego 9C</p>
+            <p>loft@vp.pl</p>
+          </div>
+        </div> <!--next-->
+        <div>
+          <div class="flex flex-col items-center sm:text-duzapc text-duzatel">
+            <p class="text-zloty font-serif">KRASNE DOMKI</p>
+          </div>
+          <div class="text-center sm:text-malapc text-malatel text-white">
+            <p>+48 510 562 121</p>
+            <p>Krasnobród ul. Sikorskiego 35</p>
+            <p>loft@vp.pl</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white text-sm font-bold pt-5 pb-5">
+      <div class="flex justify-between">
+        <p class="text-left sm:pl-1 md:pl-10 lg:pl-52">© 2023 Wyjechani.pl - wszystkie prawa zastrzeżone.</p>
+        <p class="text-right sm:pr-1 md:pr-10 lg:pr-52">design by : timhpu</p>
+      </div>
+    </section>
+      
+      
+</body>
+<script>
+    // Funkcja do obsługi wyświetlania i ukrywania dropdownu dla menu mobilnego
+    function toggleMobileMenu() {
+      var mobileMenu = document.getElementById("mobileMenu");
+      mobileMenu.classList.toggle("hidden");
+  
+      var mobileMenuIcon = document.getElementById("mobileMenuIcon");
+      mobileMenuIcon.classList.toggle("rotate-180");
+    }
+  
+    // Funkcja do obsługi wyświetlania i ukrywania dropdownu dla menu desktopowego
+    function toggleDropdown() {
+      var dropdown = document.getElementById("dropdownMenu");
+      dropdown.classList.toggle("hidden");
+  
+      var dropdownIcon = document.getElementById("dropdownIcon");
+      dropdownIcon.classList.toggle("rotate-180");
+    }
+  
+    // Pseudodewelopka na wordpresie xddd
+    function toggleDropdownMobile() {
+      var mobileDropdown = document.getElementById("mobileDropdownMenu");
+      mobileDropdown.classList.toggle("hidden");
+  
+      var mobileDropdownIcon = document.getElementById("mobileDropdownIcon");
+      mobileDropdownIcon.classList.toggle("rotate-180");
+    }
+  </script>
+</html>
